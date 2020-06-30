@@ -1,0 +1,32 @@
+1 开发模块
+    首页 闪购 购物车 我的    注册 登陆    订单 支付
+
+    模板架构
+            首页 闪购 购物车 我的    ==    黄条 导航栏
+            注册 登陆               ==    橘条
+            订单                    ==    绿条
+
+            首页    home
+            闪购    market
+            购物车  cart
+            我的    mine
+    base.html
+            base_main.html 黄条 导航栏
+                home.html
+                market.html
+                cart.html
+                mine.html
+
+            base_user.html
+                register.html
+                login.html
+
+    静态文件架构
+        所有页面都需要的静态文件会直接放到static
+            static
+            img
+            upload
+            css
+            js
+            fonts
+            html
