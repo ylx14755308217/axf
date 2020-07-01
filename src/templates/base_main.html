@@ -14,33 +14,33 @@
 {% block footer %}
     {{ block.super }}
     <footer>
-        <a href="">
-            <dl>
-                <dt class="home">
+        <a href="{% url 'axfhome:home' %}">
+            <dl class="home">
+                <dt>
                     <span></span>
                 </dt>
                 <dd>首页</dd>
             </dl>
         </a>
-    <a href="">
-            <dl>
-                <dt class="market">
+    <a href="{% url 'axfmarket:market' %}">
+            <dl class="market">
+                <dt>
                     <span></span>
                 </dt>
                 <dd>闪购</dd>
             </dl>
         </a>
-        <a href="">
-            <dl>
-                <dt class="cart">
+        <a href="{% url 'axfcart:cart' %}">
+            <dl class="cart">
+                <dt>
                     <span></span>
                 </dt>
                 <dd>购物车</dd>
             </dl>
         </a>
-        <a href="">
-            <dl>
-                <dt class="mine">
+        <a href="{% url 'axfmine:mine' %}">
+            <dl class="mine">
+                <dt>
                     <span></span>
                 </dt>
                 <dd>我的</dd>

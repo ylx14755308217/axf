@@ -4,5 +4,6 @@ from AxfHome import views
 
 urlpatterns = [
     url(r'^index/',views.index),
-    url(r'^home/',views.home),
+    url(r'^home/',views.home,name='home'),
+
 ]

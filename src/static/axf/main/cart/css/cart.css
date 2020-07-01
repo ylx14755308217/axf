@@ -1,0 +1,7 @@
+footer .cart span{
+    background:url(/static/img/cart_select.png) no-repeat;
+    background-size:0.513889rem;
+}
+footer.cart dd {
+    color: orange;
+}

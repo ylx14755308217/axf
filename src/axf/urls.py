@@ -20,5 +20,11 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^axfhome/',include('AxfHome.urls')),
+    url(r'^axfhome/',include('AxfHome.urls',namespace='axfhome')),
+
+    url(r'^axfmarket/',include('MarketApp.urls',namespace='axfmarket')),
+
+    url(r'^axfcart/',include('CartApp.urls',namespace='axfcart')),
+
+    url(r'^axfmine/',include('MineApp.urls',namespace='axfmine')),
 ]
