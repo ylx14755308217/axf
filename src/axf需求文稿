@@ -30,3 +30,10 @@
             js
             fonts
             html
+
+首页
+        （1）轮播模型 --表--插入数据
+        （2）视图函数查询所有的数据 渲染给页面
+        （3）页面轮播
+                轮播 我们使用swiper框架（封装了js的）
+                只有home模块使用swiper 我们要将swiper的css和js都导入到home

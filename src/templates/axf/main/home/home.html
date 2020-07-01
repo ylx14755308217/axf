@@ -3,9 +3,74 @@
 {% block ext_css %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'axf/main/home/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'axf/main/home/css/swiper.css' %}">
 {% endblock %}
 
 {% block title %}
     {{ block.super }}
     首页
+{% endblock %}
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'axf/main/home/js/swiper.jquery.js'%}"></script>
+    <script type="text/javascript" src="{% static 'axf/main/home/js/home.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+{#<div class="swiper-container">#}
+{#    <div class="swiper-wrapper">#}
+{#        <div class="swiper-slide">Slide 1</div>#}
+{#        <div class="swiper-slide">Slide 2</div>#}
+{#        <div class="swiper-slide">Slide 3</div>#}
+{#    </div>#}
+{#    <!-- 如果需要分页器 -->#}
+{#    <div class="swiper-pagination"></div>#}
+{#    #}
+{#    <!-- 如果需要导航按钮 -->#}
+{#    <div class="swiper-button-prev"></div>#}
+{#    <div class="swiper-button-next"></div>#}
+{#    #}
+{#    <!-- 如果需要滚动条 -->#}
+{#    <div class="swiper-scrollbar"></div>#}
+{#</div>#}
+
+{# 轮播 #}
+    <div id="home">
+        <div id="topSwiper" class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for wheel in wheels %}
+                    <a href="" class="swiper-slide">
+                        <img src="/static{{ wheel.img }}" alt="">
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>>
+        </div>
+{#  topmenu  #}
+    <div class="topMenu">
+        <nav>
+            <ul>
+                {% for nav in navs %}
+                <li>
+                    <img src="/static{{ nav.img }}" alt="">
+                    <span>{{ nav.name }}</span>
+                </li>
+                {%  endfor %}
+            </ul>
+        </nav>
+    </div>
+{#    mustbuy  #}
+        <div id="swiperMenu" class="swiper-container">
+            <ul class="swiper-wrapper">
+                {% for mustbuy in mustbuys %}
+                    <li class="swiper-slide">
+                        <img src="/static{{ mustbuy.img }}" alt="">
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
 {% endblock %}

@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'AxfHome',
+    'MarketApp',
+    'CartApp',
+    'MineApp',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +80,14 @@ WSGI_APPLICATION = 'axf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'axf2001',
+        'USER':'root',
+        'PASSWORD':'Ylxlovehcy520@@',
+        'HOST':'47.103.147.46',
+        'PORT':'3306'
     }
 }
 
