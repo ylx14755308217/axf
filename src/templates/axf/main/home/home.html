@@ -71,6 +71,58 @@
                 {% endfor %}
             </ul>
         </div>
+{#    mainshow  #}
+    {% for mainshow in mainshows %}
+        <div class="mainInfo">
+            <section>
+                <h3>
+                    {{ mainshow.name }}
+                    <a href="">更多》</a>
+                    <span></span>
+                </h3>
+                <div>
+                    <a href="">
+                        <img src="/static/{{ mainshow.img }}" alt="">
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="/static{{ mainshow.img1 }}" alt="">
+                            <span class="description">{{ mainshow.longname1 }}</span>
+                            <span style="font-size: 4px">¥{{ mainshow.price1 }}</span>
+                            <s style="font-size: 4px">¥{{ mainshow.marketprice1 }}</s>
+                        </a>
+                        <button>
+                            <span>+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="/static{{ mainshow.img2 }}" alt="">
+                            <span class="description">{{ mainshow.longname2 }}</span>
+                            <span style="font-size: 4px">¥{{ mainshow.price2 }}</span>
+                            <s style="font-size: 4px">¥{{ mainshow.marketprice2 }}</s>
+                        </a>
+                        <button>
+                            <span>+</span>
+                        </button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="/static{{ mainshow.img3 }}" alt="">
+                            <span class="description">{{ mainshow.longname3 }}</span>
+                            <span style="font-size: 4px">¥{{ mainshow.price3 }}</span>
+                            <s style="font-size: 4px">¥{{ mainshow.marketprice3 }}</s>
+                        </a>
+                        <button>
+                            <span>+</span>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    {% endfor %}
     </div>
 
 {% endblock %}
