@@ -37,3 +37,7 @@
         （3）页面轮播
                 轮播 我们使用swiper框架（封装了js的）
                 只有home模块使用swiper 我们要将swiper的css和js都导入到home
+闪购
+    左栏 --表
+    右上
+    右下
