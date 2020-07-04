@@ -9,3 +9,20 @@
     {{ block.super }}
     我的
 {% endblock %}
+
+{% block content %}
+    {{ block.super }}
+        <div class id="mine">
+            <div class="fixed">
+                <span class="glyphicon glyphicon-user"></span>
+            <p>
+                <span>fff</span>
+                <span>aaa</span>
+            </p>
+                <div id="regis">注册</div>
+                <p>
+                    <span class="glyphicon glyphicon-heart"></span>
+                </p>
+            </div>
+        </div>
+{% endblock %}

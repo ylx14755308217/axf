@@ -1,3 +1,10 @@
+footer .market span{
+    background: url(/static/img/market_select.png) no-repeat;
+    background-size:0.513889rem;
+}
+footer.market dd {
+    color: orange;
+}
 #market {
   padding: 1.5rem 0;
   font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
@@ -167,7 +174,7 @@ section > button {
   color: red;
   display: inline-block;
   text-align: center;
-  line-height: 0.55rem;
+  line-height: 0.01rem;
   font-weight: 900;
   width: 0.5rem;
   height: 0.5rem; }

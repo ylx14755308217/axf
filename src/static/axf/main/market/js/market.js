@@ -10,5 +10,6 @@ $(function () {
 
     $('#sort_rule').click(function () {
         $(this).find('span').toggleClass('glyphicon glyphicon-chevron-down glyphicon glyphicon-chevron-up')
+        $('#sort_rule_container').toggle();
     })
 })
