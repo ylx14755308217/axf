@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'MarketApp',
     'CartApp',
     'MineApp',
+    'UserApp',
 ]
 
 MIDDLEWARE = [
