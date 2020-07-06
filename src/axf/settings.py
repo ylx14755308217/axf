@@ -132,3 +132,24 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/upload')
+
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = '1067002319@qq.com'
+EMAIL_HOST_PASSWORD = 'xnxhiusqunjwbdhf'
+EMAIL_USE_SSL = True
+
+CACHES={
+         'default':{
+                    'BACKEND':'django_redis.cache.RedisCache',
+                    'LOCATION':'redis://127.0.0.1:6379/1',
+                    'OPTIONS':{
+                             'CLIENT_CLASS':'django_redis.client.DefaultClient'
+                        },
+             'TIMEOUT':60,
+                    }
+                }
+# 验证码字体
+FONT_PATH = os.path.join(BASE_DIR,'static/fonts/ADOBEARABIC-BOLD.OTF')

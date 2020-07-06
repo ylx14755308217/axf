@@ -1,0 +1,6 @@
+$(function () {
+    $('#changeImage').click(function () {
+
+    })
+
+})
