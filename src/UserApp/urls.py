@@ -13,4 +13,6 @@ urlpatterns=[
 
 # 验证码
     url(r'^get_code/',views.get_code,name='get_code'),
+
+    url(r'^logout/',views.logout,name='logout')
 ]

@@ -59,14 +59,14 @@ $(function () {
         //  false & true  之间的关系
         var b = flagname & flagpassword;
 
-        if(b==1){
-
+        if(b == 1){
+    // 加密之后的密码
             password = md5(password);
+                //将加密的密码重新赋值给文本框
             $('#exampleInputPassword1').val(password);
-
             return true;
         }else{
-            return false;
+        return false;
         }
     })
 

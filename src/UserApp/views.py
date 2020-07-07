@@ -7,10 +7,11 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.core.cache import cache
 from django.core.mail import send_mail
 from django.http import JsonResponse, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.template import loader
+from django.urls import reverse
 from django.utils.six import BytesIO
 
 from UserApp.models import AxfUser
@@ -44,10 +45,57 @@ def register(request):
         # 发送邮件
         sendEmail(name,email,token)
 
-        return HttpResponse ('注册成功')
+        return redirect(reverse('axfuser:login'))
 
 def login(request):
-    return render(request,'axf/user/login/login.html')
+    if request.method == 'GET':
+        return render(request,'axf/user/login/login.html')
+    elif request.method == 'POST':
+# 先判断验证码还是先判断名字和密码
+# 先验证验证码 因为要较少数据库访问次数
+# 页面中你输入的验证码
+        imgcode = request.POST.get('imgCode')
+        #图片中的验证码数字
+        verify_code = request.session.get('verify_code')
+
+        if imgcode.lower() == verify_code.lower():
+
+            name = request.POST.get('name')
+            users = AxfUser.objects.filter(name=name)
+
+            if users.exists():
+                user = users.first()
+
+                password = request.POST.get('password')
+
+                if check_password(password,user.password):
+                    if user.active:
+                        #session 不能直接绑定一个对象 可以绑定属性
+                        request.session['user_id']=user.id
+
+                        return register(reverse('axfmine:mine'))
+                    else:
+                        context = {
+                            'msg':'账户未激活'
+                        }
+                        return render(request, 'axf/user/login/login.html', context=context)
+
+                else:
+                    context = {
+                        'msg':'密码错误'
+                    }
+                    return render(request,'axf/user/login/login.html',context=context)
+
+            else:
+                context = {
+                    'msg':'用户名错误'
+                }
+                return render(request,'axf/user/login/login.html',context=context)
+        else:
+            context = {
+                'msg':'验证码错误'
+            }
+            return render(request,'axf/user/login/login.html',context=context)
 
 
 def checkName(request):
@@ -66,32 +114,6 @@ def checkName(request):
         return JsonResponse(data=data)
 
 
-# def testEmali(request):
-#     # 主题
-#     subject ='激活'
-#     # 邮件的内容
-#     message = '邮件发送可以么'# 同时出现message不执行
-#     #加载
-#     index = loader.get_template('axf/user/register/active.html')
-#     #渲染
-#     context={
-#         'name':'顺利',
-#         'url':'http://www.baidu.com'
-#     }
-#     result = index.render(context=context)
-#
-#     html_message = result
-#     # 发件人
-#     from_email = '1067002319@qq.com'
-#     # 接收者
-#     recipient_list = ['1067002319@qq.com']
-#     #
-#     send_mail(subject=subject,message=message,html_message=html_message,from_email=from_email,recipient_list=recipient_list)
-#
-#
-#     return HttpResponse('邮件发送成功')
-
-
 def account(request):
     # 将当前注册的用户的激活状态修改为True
     token = request.GET.get('token')
@@ -108,14 +130,6 @@ def account(request):
         return HttpResponse('邮件已过期')
 
 
-    # users = AxfUser.objects.filter(token=token)
-    # if user_id:
-    #     user = AxfUser.objects.get(pk=user_id)
-    #     user.active = True
-    #     user.save()
-    #     return HttpResponse('激动成功')
-    # else:
-    #     return HttpResponse('邮件已过期')
 
 def get_code(request):
 
@@ -182,3 +196,8 @@ def generate_code():
         code += random.choice(source)
 
     return code
+
+
+def logout(request):
+    request.session.flush()
+    return redirect(reverse('axfmine:mine'))
