@@ -2,9 +2,11 @@ footer .home span{
     background: url(/static/img/home_select.png) no-repeat;
     background-size:0.513889rem;
 }
-footer.home dd {
-    color: orange;
+
+footer .home dd{
+    color: #ffbf3e;
 }
+
 
 #home {
   padding: 1.5rem 0;
@@ -15,7 +17,7 @@ footer.home dd {
   padding-bottom: 3rem;
   position: fixed; }
 
-
+/*轮播*/
 #topSwiper {
   height: 3.95rem;
   width: 10rem;
@@ -27,6 +29,7 @@ footer.home dd {
 #topSwiper img {
   width: 100%;
   height: 100%; }
+
 
 .topMenu {
   padding-bottom: 0.16rem; }
@@ -65,39 +68,38 @@ footer.home dd {
 
 
 
-.CVS fieldset {
-  border: none;
-  padding: 0; }
-.CVS fieldset > a {
-  display: inline-block;
-  width: 49%; }
-.CVS fieldset img {
-  width: 100%; }
+/*.CVS fieldset {*/
+  /*border: none;*/
+  /*padding: 0; }*/
+/*.CVS fieldset > a {*/
+  /*display: inline-block;*/
+  /*width: 49%; }*/
+/*.CVS fieldset img {*/
+  /*width: 100%; }*/
 
 
 
-.CVS ul {
-  display: flex; }
-.CVS ul li {
-  width: 2.5rem;
-  text-align: center;
-  font-size: 0.35rem; }
-.CVS ul li img {
-  width: 2.5rem; }
+/*.CVS ul {*/
+  /*display: flex; }*/
+/*.CVS ul li {*/
+  /*width: 2.5rem;*/
+  /*text-align: center;*/
+  /*font-size: 0.35rem; }*/
+/*.CVS ul li img {*/
+  /*width: 2.5rem; }*/
 
 
 
-.CVS ol {
-  display: flex;
-  flex-wrap: wrap; }
-.CVS ol li {
-  list-style: none;
-  width: 5rem; }
-.CVS > ol a {
-  display: block; }
-.CVS ol a img {
-  width: 100%; }
-
+/*.CVS ol {*/
+  /*display: flex;*/
+  /*flex-wrap: wrap; }*/
+/*.CVS ol li {*/
+  /*list-style: none;*/
+  /*width: 5rem; }*/
+/*.CVS > ol a {*/
+  /*display: block; }*/
+/*.CVS ol a img {*/
+  /*width: 100%; }*/
 
 
 .mainInfo {
@@ -143,6 +145,8 @@ footer.home dd {
   display: block; }
 .mainInfo > section > ul > li > a > img {
   width: 100%; }
+
+
 .mainInfo > section > ul > li > a > s {
   color: grey;
   font-size: 0.3rem; }

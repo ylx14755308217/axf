@@ -1,39 +1,45 @@
 {% extends 'base_user.html' %}
+
 {% load static %}
 
 {% block title %}
     {{ block.super }}
     登陆
 {% endblock %}
+
 {% block ext_js %}
-    {{ block.super}}
+    {{ block.super }}
     <script type="text/javascript" src="{% static 'axf/user/login/login.js' %}"></script>
 {% endblock %}
+
+
 
 {% block content %}
     {{ block.super }}
     <div class="container">
-    <form action="{% url 'axfuser:login' %}" method="post" enctype="multipart/form-data">
-        <span style="color: red">{{ msg }}</span>
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="exampleInputName">用户名字</label>
-            <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="请输入用户名字">
-            <span id="nameinfo"></span>
-        </div>
+        <form action="{% url 'axfuser:login' %}" method="post">
+            <span style="color: red">{{ msg }}</span>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">密码</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputName">用户名字</label>
+                <input type="text" name='name' class="form-control" id="exampleInputName" placeholder="英文字母3到6个">
+                <span id="nameinfo"></span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">密码</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+            </div>
 
-        <div class="form-group">
-            <img style="width: 150px;height: 100px" src="/axfuser/get_code/" alt="" id="changeImage">
+            <div class="form-group">
+                <img style="width: 150px;height: 60px" src="/axfuser/get_code/" alt="" id="changeImage">
+                
+                <input type="text" name="imgCode" class="imgcode" placeholder="请输入验证码">
+            </div>
 
-            <input type="text" name="imgCode" class="imgcode" id="imgcode" placeholder="请输入验证码">
-        </div>
-
-        <button type="submit" class="btn btn-success btn-block">登陆</button>
-    </form>
+            <button type="submit" class="btn btn-success btn-block">登陆</button>
+        </form>
     </div>
+
+
 {% endblock %}

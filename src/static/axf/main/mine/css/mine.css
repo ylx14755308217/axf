@@ -1,9 +1,10 @@
 footer .mine span{
-    background:url(/static/img/mine_select.png) no-repeat;
+    background: url(/static/img/mine_select.png) no-repeat;
     background-size:0.513889rem;
 }
-footer.mine dd {
-    color: orange;
+
+footer .mine dd{
+    color: #ffbf3e;
 }
 
 #mine {
@@ -38,7 +39,7 @@ footer.mine dd {
   border-radius: 50%;
   line-height: 1.8rem; }
 
-.fixed > span > img{
+.fixed > span >img{
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -107,6 +108,9 @@ footer.mine dd {
   line-height: 1rem; }
 .mine #nav ul li dl dt span, .mine menu ul li dl dt span {
   font-size: 0.5rem; }
+
+
+
 .mine menu ul {
   flex-wrap: wrap; }
 .mine menu ul li {
@@ -115,6 +119,8 @@ footer.mine dd {
   width: 100%; }
 .mine menu ul li:last-child dl {
   width: 25%; }
+
+
 .mine p:last-child > a {
   line-height: 1.5rem;
   text-align: center;

@@ -1,18 +1,25 @@
 {% extends 'base.html' %}
-{% load static %}
 
+
+{% load static %}
 
 {% block ext_css %}
     {{ block.super }}
+
     <link rel="stylesheet" href="{% static 'axf/main/css/main.css' %}">
+
 {% endblock %}
+
+
 {% block header %}
-    {{ block.super}}
+    {{ block.super }}
     <header></header>
 {% endblock %}
 
+
 {% block footer %}
     {{ block.super }}
+
     <footer>
         <a href="{% url 'axfhome:home' %}">
             <dl class="home">
@@ -22,7 +29,8 @@
                 <dd>首页</dd>
             </dl>
         </a>
-    <a href="{% url 'axfmarket:market' %}">
+
+        <a href="{% url 'axfmarket:market' %}">
             <dl class="market">
                 <dt>
                     <span></span>
@@ -30,6 +38,7 @@
                 <dd>闪购</dd>
             </dl>
         </a>
+
         <a href="{% url 'axfcart:cart' %}">
             <dl class="cart">
                 <dt>
@@ -38,6 +47,7 @@
                 <dd>购物车</dd>
             </dl>
         </a>
+
         <a href="{% url 'axfmine:mine' %}">
             <dl class="mine">
                 <dt>
@@ -47,4 +57,9 @@
             </dl>
         </a>
     </footer>
+
+
+
 {% endblock %}
+
+

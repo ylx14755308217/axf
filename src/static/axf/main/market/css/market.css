@@ -1,10 +1,12 @@
 footer .market span{
-    background: url(/static/img/market_select.png) no-repeat;
+    background:url(/static/img/market_select.png) no-repeat;
     background-size:0.513889rem;
 }
-footer.market dd {
+
+footer .market dd{
     color: orange;
 }
+
 #market {
   padding: 1.5rem 0;
   font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
@@ -12,9 +14,6 @@ footer.market dd {
   height: 100%;
   width: 100%;
   position: fixed;}
-
-
-
 
 /*********左面的的导航*********************/
 aside {
@@ -39,8 +38,10 @@ aside ul li a {
   font-size: 0.35rem;
   color: grey;
   z-index: +1; }
+
+
 .yellowSlide {
-  background: yellow;
+  background: green;
   width: 0.1rem;
   height: 0.7rem;
   position: absolute;
@@ -56,10 +57,11 @@ div > section {
   position: relative;
   height: 100%;
   overflow: auto;
-  padding: 1.4rem 0 0;}
+  padding: 1.4rem 0 0;
+}
 
 
-/**********以下******全部分类****综合安排***************/
+/**********以下******全部分类****综合排序***************/
 nav {
   top: 1.32rem;
   right: 0;

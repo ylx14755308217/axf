@@ -1,11 +1,93 @@
 {% extends 'base_main.html' %}
-{% load static %} }}
+
+{% load static %}
+
 {% block ext_css %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static 'axf/main/cart/css/cart.css' %}">
 {% endblock %}
 
+
 {% block title %}
     {{ block.super }}
     购物车
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}
+    <div id="cart">
+        <h3>购物车</h3>
+
+        <div class="full">
+            <section>
+                <ul>
+                    <li>收货人：芳心纵火犯</li>
+                    <li>电话：110</li>
+                    <li>地址：北科</li>
+                </ul>
+
+
+                <div class="bill">
+                    <p>闪送超市</p>
+                    <p>0元起送，买东西就送搓澡一次</p>
+                    <a href="">凑单专区</a>
+                </div>
+
+                <div class="delivery">
+                    <span>收获时间</span>
+                    <span>一小时送达</span>
+                    <a href="">可预定》</a>
+                </div>
+
+                <div class="delivery">
+                    <span>收获备注</span>
+                    <input type="text">
+                </div>
+
+                {% for c in cart %}
+                    <div class="menuList">
+                    <div class="confirm">
+                        <span>
+                            <span>✔</span>
+                        </span>
+                    </div>
+
+                    <a href="">
+                        <img src="/static{{ c.c_goods.productimg }}" alt="">
+                        <p>{{ c.c_goods.productlongname }}</p>
+                        <p class="presentPrice">{{ c.c_goods.price }}</p>
+                    </a>
+
+                    <section>
+                        <button>-</button>
+                        <span>{{ c.c_goods_num }}</span>
+                        <button>+</button>
+                    </section>
+
+                </div>
+                {% endfor %}
+                <div class="payTheBill">
+                    <div class="confirm">
+                            <span>
+                                <span>✔</span>
+                            </span>
+                    </div>
+                    <p>
+                        <span>全选</span>
+                        <span>共计:</span>
+                        <span>1.0</span>
+                    </p>
+                    <a href="">下单</a>
+                </div>
+
+
+            </section>
+
+
+
+        </div>
+
+
+    </div>
 {% endblock %}
